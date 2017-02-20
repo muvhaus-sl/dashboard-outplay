@@ -5,16 +5,16 @@ module.exports = function(environment) {
     modulePrefix: 'outplay-dash',
     environment: environment,
     rootURL: '/',
-    backend:'http://localhost:8080/',
+    backend:'http://dashboard.leopadua.com:8080/',
     locationType: 'auto',
     contentSecurityPolicy: {
       'script-src': "'self' 'unsafe-eval' *.google.com *.gstatic.com",
       'style-src': "'self' 'unsafe-inline' *.google.com *.googleapis.com *.gstatic.com",
       'font-src': "'self' *.gstatic.com *.googleapis.com",
-      'connect-src': "'self' http://localhost:8080",
+      'connect-src': "'self' http://dashboard.leopadua.com:8080",
     }, 
     apollo: {
-      apiURL: 'http://localhost:8080/graphql'
+      apiURL: 'http://dashboard.leopadua.com:8080/graphql'
     },
     EmberENV: {
       FEATURES: {
