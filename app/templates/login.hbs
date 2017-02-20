@@ -1,0 +1,24 @@
+<div class="container">
+
+      <form class="form-signin"  {{action 'authenticate' on='submit'}}>
+      <img src="/avatar.jpg" class="avatar-login"/>
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <label for="inputEmail" class="sr-only">Email address</label>
+         {{input id='identification' name="identification" placeholder='Enter Login' value=identification class="form-control"}}
+        <label for="inputPassword" class="sr-only">Password</label>
+     {{input id='password' name="password" placeholder='Enter Password' type='password' value=password class="form-control"}}
+        
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      <div class="login-explanation">
+        <p>For demo purposes, please use:</p>
+         <p><strong>User:</strong> demoUser</p>  
+         <p><strong>Password:</strong> test1234</p>  
+      </div>
+       </form>
+
+		 {{#if errorMessage}}
+		    <p>{{errorMessage}}</p>
+		  {{/if}}
+
+     
+</div>

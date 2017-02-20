@@ -1,0 +1,11 @@
+{{#dash-toolbar title="Genre Popularity"}}
+
+{{/dash-toolbar }}
+
+{{scatter-chart class="scatter-chart"  data=model.genreRevenueScatter options=options}}
+{{geo-chart data=model.genreRevenueGeo options=options}}
+
+<div class="subtitle">
+<p>Popularity calculated using Total Sales per Genre, which roughly indicates people's tastes and acquisition of games of a certain genre.</p>
+<p>Values shown as Millions (US Dollars)</p>
+</div>

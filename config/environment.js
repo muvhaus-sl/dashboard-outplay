@@ -5,7 +5,17 @@ module.exports = function(environment) {
     modulePrefix: 'outplay-dash',
     environment: environment,
     rootURL: '/',
+    backend:'http://localhost:8080/',
     locationType: 'auto',
+    contentSecurityPolicy: {
+      'script-src': "'self' 'unsafe-eval' *.google.com *.gstatic.com",
+      'style-src': "'self' 'unsafe-inline' *.google.com *.googleapis.com *.gstatic.com",
+      'font-src': "'self' *.gstatic.com *.googleapis.com",
+      'connect-src': "'self' http://localhost:8080",
+    }, 
+    apollo: {
+      apiURL: 'http://localhost:8080/graphql'
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -46,5 +56,11 @@ module.exports = function(environment) {
 
   }
 
+  ENV['ember-simple-auth'] = {
+    base: {
+      store: 'session-store:local-storage',
+      routeAfterAuthentication: '/dashboard/overview'
+    }
+  };
   return ENV;
 };

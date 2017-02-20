@@ -1,0 +1,27 @@
+<div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr> 
+          {{#each tableHeaders as |header|}}    
+            <th>{{header}}</th>
+          {{/each}}          
+        </tr>
+      </thead>
+      {{#if dataQueryResults}}
+        <tbody>
+              {{#each dataQueryResults as |row|}} 
+                <tr> 
+                  {{#each tableProperties as |property|}}    
+                      <td>{{get row property}}</td>
+                  {{/each}}
+                </tr>
+              {{/each}}             
+        </tbody>
+      {{else}}
+       <tr>  
+       <td colspan={{tableProperties.length}}>
+        {{loading-spinner}}
+       </td></tr>
+      {{/if}}
+    </table>
+</div>

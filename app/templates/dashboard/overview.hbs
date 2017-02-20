@@ -1,0 +1,38 @@
+{{#dash-toolbar title="Overview"}}
+
+{{/dash-toolbar }}
+<div class="row placeholders">
+	<div class="col-xs-6 col-sm-4 placeholder">
+		{{pie-chart data=model.countriesExpenditure options=options}}
+		<h4>Countries</h4>
+		<span class="text-muted">Spent on Games</span>
+	</div>
+	<div class="col-xs-6 col-sm-4 placeholder">
+		{{pie-chart data=model.topPublishers options=options}}
+		<h4>Publishers</h4>
+		<span class="text-muted">by Sales</span>
+	</div>
+	<div class="col-xs-6 col-sm-4 placeholder">
+		{{pie-chart data=model.topGenres options=options}}
+		<h4>Genres</h4>
+		<span class="text-muted">by Sales</span>
+	</div>
+</div>
+{{#dash-card  canCollapse=true title="Top Games by Sales"}} 
+	{{dash-table dataQueryResults=model.topGamesSales
+	headers='["Rank","Name","Genre","Publisher","Year","Global Sales"]'}}
+{{/dash-card}}
+<div class="row-of-cards">
+	{{#dash-card canCollapse=false title="Top Genres by Title Count"}} 
+		{{dash-table 
+		 dataQueryResults=model.topGenresTitleCount
+		headers='["Genre","Title Count"]'
+		properties='["name","value"]'}}
+	{{/dash-card}}
+	{{#dash-card  canCollapse=false title="Top Publishers by Title Count"}} 
+		{{dash-table 
+		 dataQueryResults=model.topPublishersTitleCount
+		headers='["Publisher","Global Sales"]'
+		properties='["name","value"]'}}
+	{{/dash-card}}
+</div>

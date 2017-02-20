@@ -1,0 +1,22 @@
+<card class="dash-card" >
+	<title  {{action "toggleCardState"}}>{{title}} 
+		{{#if canCollapse}} 	
+	 		<toggle>
+	  			{{#if isExpanded}}
+	  				Collapse
+	  			{{else}}
+	  				Expand
+	 			{{/if}}
+	  		</toggle>	
+		{{/if}}
+	</title>
+	
+	{{#if isExpanded }}
+	
+	<content>
+			
+	 			{{yield}}	
+	 		
+	 	</content>
+	{{/if}}
+</card>  

@@ -1,0 +1,17 @@
+<div class="jumbotron col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 about-box">
+	<h1>Enjoy!</h1>
+		<p>I've put together a little insight in the economics of games.</p>
+		<p>Using a dataset from Kaggle, I mashed over 16.000 game titles released during the past 3 decades.</p>
+
+		<p>To make this data available for the Ember app, I have generated a backend server using Express and GraphQL as the query/transport layer. On the client side, Ember-Apollo provided the necessary tooling for the GraphQL queries syntax and requests.</p>
+		<p>To simplify deployment of the server, for this testing purposes I have saved the mySQL query results as static datasets for the queries needed. The benefit of using GraphQL, is that I could easily modify the resolvers' logic and use mixed sources to fulfill different queries, such as a RESTful end-point or a different managed service (i.e: Keen.io), and should that be required on a production environment, the front-end would not need to be modified.</p>
+
+		<p>In the following dashboard, I tried to explore and transfer my previous knowledge of other frameworks/platforms with: Usage of Routes, Components, Templates and Services. In this particular application, I did not find the "automatic" Model-View-Controller pattern that Ember-CLI provides very useful, because on a given View, I had to consume multiple data sources. To address this, I have investigated the use of a Services-oriented, where a Route's model was composed by multiple Promises, fulfilled by a Service that is injected.</p>
+
+		<p>While I could not find a lot of documentation to support my decision, it works as expected, and if anything, I would move the Services closer to Components, making use of Co-location patterns similar to React-Native.</p>
+
+		<p>In terms of Infrastructure, I have created an demo server for the API and one for the project itself, both are hosted on AWS.</p>
+
+		<p>Sit back, relax and <strong>enjoy the view.</strong> ;)</p>
+		<p class="about-signature"><em>Yours trully,<br/><strong>Leo</strong></em></p>
+</div>

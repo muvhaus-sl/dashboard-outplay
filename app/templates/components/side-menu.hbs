@@ -1,0 +1,21 @@
+<div class="col-sm-3 col-md-2 sidebar">
+	<ul class="nav nav-sidebar">
+		<li>{{#link-to "dashboard.overview"}}<i class="glyphicon glyphicon-signal"></i> Overview{{/link-to}}</li>
+		<li>
+			{{#link-to "dashboard.revenue"}}<i class="glyphicon glyphicon-usd"></i> Revenue{{/link-to}}
+			<ul >
+				<li>{{#link-to "dashboard.revenue.salesGenre"}}Revenue by Genre{{/link-to}}</li>
+				<li>{{#link-to "dashboard.revenue.salesPublisher"}}Revenue by Publisher{{/link-to}}</li>
+			</ul>
+		</li>
+		<li>
+			{{#link-to "dashboard.geo"}}<i class="glyphicon glyphicon-globe"></i> Geo{{/link-to}}
+			<ul >
+				<li class="ember-view" >{{#link-to "dashboard.geo.platformPopularity"}}Platform Popularity{{/link-to}}</li>
+				<li class="ember-view" >{{#link-to "dashboard.geo.genrePopularity"}}Genre Popularity{{/link-to}}</li>
+				<li class="ember-view" >{{#link-to "dashboard.geo.revenue"}}Revenue by Region{{/link-to}}</li>
+			</ul>
+		</li> 
+	</ul> 
+
+</div>

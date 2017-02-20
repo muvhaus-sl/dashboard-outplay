@@ -1,0 +1,19 @@
+{{#dash-toolbar title="Revenue by Genre"}}
+
+{{/dash-toolbar }}
+{{#dash-card title="Revenue by Genre"}} 
+{{line-chart class="line-chart" data=model.revenueByGenreYear options=options}}
+{{/dash-card}}
+<div class="subtitle">
+<p>Values shown as Millions (US Dollars)</p>
+</div>
+{{#dash-card  canCollapse=true title="Yearly Revenue by Genre"}} 
+	{{dash-table dataQueryResults=model.revenueByGenreYearObject
+	headers='["Year","Action","Adventure","Fighting","Platform","Racing","Role Playing","Shooter","Simulation","Sports","Strategy"]'
+	properties='["Year","Action","Adventure","Fighting","Platform","Racing","RolePlaying","Shooter","Simulation","Sports","Strategy"]'}}
+
+{{/dash-card}}
+
+<div class="subtitle">
+<p>Values shown as Millions (US Dollars)</p>
+</div>

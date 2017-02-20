@@ -1,0 +1,14 @@
+{{#dash-toolbar title="Revenue by Publisher"}}
+
+{{/dash-toolbar }}
+
+{{line-chart class="area-chart" data=model.revenueByPublisher options=options}}
+<div class="subtitle">
+<p>Values shown as Millions (US Dollars)</p>
+</div>
+{{#dash-card  canCollapse=false title="Cumulative Revenue"}} 
+{{line-chart class="area-chart" data=model.revenueByPublisherCumulative options=options}}
+{{/dash-card}}
+<div class="subtitle">
+<p>Values shown as Millions (US Dollars)</p>
+</div>

@@ -1,5 +1,47 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
 
+<!-- Static navbar -->
+<nav class="navbar navbar-fixed-top">
+<div class="container-fluid">
+  <div class="navbar-header">
+     <span class="navbar-brand"><span class="navbar-brand-icon"></span> Games in Numbers</span>
+    </div>
+  <div id="navbar" class="navbar-collapse collapse"> 
+    
+    {{#if session.isAuthenticated}}
+      {{/if}}
+    <ul class="nav navbar-nav navbar-right">
+    	<li>{{#link-to "about"}}About{{/link-to}}</li>
+     <!--ember-simple-auth implementation to control the links on the menu-->
+     	{{#if session.isAuthenticated}}
+        <li>{{#link-to 'dashboard.overview'}}Dashboard{{/link-to}}</li> 
+       <li>
+         <div class="avatar-toolbar-container dropdown {{if displayUserMenu 'open'}}">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" {{action 'toggleDisplayUserMenu'}}>
+              <img src="/avatar.jpg" class="avatar-toolbar"/>
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu"> 
+              <li><a class="menu-link" {{action 'invalidateSession'}}>Logout</a></li>
+            </ul> 
+          </div>
+        </li> 
+      {{else}}
+    		<li>{{#link-to 'dashboard.overview'}}Login{{/link-to}}</li>  
+  		{{/if}}
+  		<!--/ember-simple-auth conditional menu items -->
+   
+   </ul> 
+
+  </div><!--/.nav-collapse -->
+</div><!--/.container-fluid -->
+</nav>
+
+<div id="main_content" class="container-fluid">
 {{outlet}}
+</div><!--/#main_content -->
+
+<footer class="footer">
+      <div class="container">
+        <p class="footer-text">Made with <span class="heart">♥</span> and Sublime. &copy; Leo Padua - 2017</p>
+      </div>
+</footer>
