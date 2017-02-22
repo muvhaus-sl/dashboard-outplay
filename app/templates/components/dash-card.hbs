@@ -1,13 +1,13 @@
-<card class="dash-card" >
+<dash-card class="dash-card" >
 	<title  {{action "toggleCardState"}}>{{title}} 
 		{{#if canCollapse}} 	
-	 		<toggle>
+	 		<card-toggle>
 	  			{{#if isExpanded}}
 	  				Collapse
 	  			{{else}}
 	  				Expand
 	 			{{/if}}
-	  		</toggle>	
+	  		</card-toggle>	
 		{{/if}}
 	</title>
 	
@@ -19,4 +19,4 @@
 	 		
 	 	</content>
 	{{/if}}
-</card>  
+</dash-card>  
