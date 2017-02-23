@@ -138,7 +138,7 @@ export default Ember.Service.extend(UnsubscribeRoute, {
    			if(!asArray){
    				return result;
    			}
-   			resArr.push(["Year","Action","Adventure","Fighting","Platform","Racing","Role Playing","Shooter","Simulation","Sports","Strategy"])
+   			resArr.push(["Year","Action","Adventure","Fighting","Platform","Racing","Role Playing","Shooter","Simulation","Sports","Strategy"]);
 	   		for(let i=0,l=result.length;i<l;i++){
 		   		resArr.push([result[i].Year,
 					   		result[i].Action,
